@@ -27,8 +27,8 @@ public class MainActivity extends WearableActivity {
             new SimpleDateFormat("HH:mm", Locale.US);
 
     private BoxInsetLayout mContainerView;
-    private TextView mTextView;
-    private TextView mClockView;
+    //private TextView mTextView;
+    //private TextView mClockView;
 
 
     @Override
@@ -38,7 +38,7 @@ public class MainActivity extends WearableActivity {
         setAmbientEnabled();
 
         mContainerView = (BoxInsetLayout) findViewById(R.id.container);
-        mTextView = (TextView) findViewById(R.id.text);
+       //mTextView = (TextView) findViewById(R.id.text);
         //mClockView = (TextView) findViewById(R.id.clock);
         String abc = readFromFile(this);
         Log.d("Read is", abc);
