@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LockScreenApp</string>
+
+    <string name="instructions">Click on UNLOCK button to unlock the screen</string>
+    <string name="unlock">UNLOCK</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+</resources>
