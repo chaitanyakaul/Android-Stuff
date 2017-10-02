@@ -12,7 +12,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="75dp"
+        android:layout_marginLeft="85dp"
         android:layout_marginTop="50dp"
         android:text="0" />
 
@@ -23,6 +23,14 @@
         android:layout_gravity="center"
         android:onClick="beginCountdown"
         android:text="Click me to count" />
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Time"
+        android:layout_gravity="center"
+        android:layout_marginTop="75dp"/>
 
 
 </android.support.wearable.view.BoxInsetLayout>

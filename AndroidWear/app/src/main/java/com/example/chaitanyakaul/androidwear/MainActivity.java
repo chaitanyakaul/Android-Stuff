@@ -3,11 +3,14 @@ package com.example.chaitanyakaul.androidwear;
 import android.content.Context;
 import android.nfc.Tag;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.wearable.activity.WearableActivity;
 import android.support.wearable.view.BoxInsetLayout;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -15,7 +18,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -23,6 +28,7 @@ public class MainActivity extends WearableActivity {
 
     private TextView textView;
     private int counter = 0;
+    private TextView timeTextView;
     private static final SimpleDateFormat AMBIENT_DATE_FORMAT =
             new SimpleDateFormat("HH:mm", Locale.US);
 
@@ -46,6 +52,18 @@ public class MainActivity extends WearableActivity {
         textView = (TextView)findViewById(R.id.textView);
         textView.setText(abc);
 
+        timeTextView = (TextView) findViewById(R.id.timeTextView);
+        CountDownTimer newtimer = new CountDownTimer(1000000000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                Calendar c = Calendar.getInstance();
+                timeTextView.setText(c.get(Calendar.HOUR)+":"+c.get(Calendar.MINUTE)+":"+c.get(Calendar.SECOND));
+            }
+            public void onFinish() {
+
+            }
+        };
+        newtimer.start();
 
 
 
@@ -125,6 +143,8 @@ public class MainActivity extends WearableActivity {
     public void onExitAmbient() {
         updateDisplay();
         super.onExitAmbient();
+       // newtimer.close();
+
     }
 
 
